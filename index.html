@@ -1,13 +1,13 @@
-<!Doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0">
     <title>Meteor Life, Bro</title>
-    <!-- Compiled and minified CSS -->
+    <!-- Materialize Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
+    <!-- Materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <!-- GOOGLE MAP API -->
     <!-- <script async defer -->
@@ -16,8 +16,8 @@
     <!-- G MAP API-->
     <script src="https://www.google.com/maps/embed/v1/MODE?key=AIzaSyB3wNe2ECgQED8uxdRRYDG7Hd8mpSdkDAE&parameters"></script>
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <!-- JAVASCRIPT LINK: -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- <! -- JAVASCRIPT LINK: -->
     <!-- <script src="main.js"></script> -->
 </head>
 
@@ -38,13 +38,26 @@
     </div>
 
     <div class="container">
+        <div id="form">
+            <form>
+                <p>
+                    <label>
+                        <input class="with-gap" name="found" type="radio" />
+                        <span>Found?</span>
+                    </label>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
         <div id="info"></div>
     </div>
 
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
+                <div class="col s12">
                     <h5 class="black-text center">Created By: Jacob Artz, Jamie DeHaan, Stephen Michaen, Tyler Winstead</h5>
                 </div>
             </div>
