@@ -13,16 +13,20 @@
 }
 
 #form {
-    text-align: center;
+    color: white;
+    float: left;
+    text-align: left;
     z-index: 2;
 }
 
 #info {
-    border-color: black;
+    border-color: white;
     border-style: solid;
     border-width: 5px;
+    float: right;
     height: 200px;
-    margin: 0 auto;
+    margin-right: 40px;
+    margin-top: 60px;
     width: 300px;   
     z-index: 2;  
 }
@@ -34,7 +38,7 @@
 }
 
 #map {
-    border-color: black;
+    border-color: white;
     border-style: solid;
     border-width: 5px;
     height: 400px;
@@ -49,7 +53,3 @@ span {
     color: black;
     z-index: 2;
 }
-
-/* .with-gap {
-    background-color: white;
-} */

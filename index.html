@@ -9,64 +9,110 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <!-- Materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <!-- GOOGLE MAP API -->
-    <!-- <script async defer -->
-    <!-- src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"> -->
-    <!-- </script> -->
-    <!-- G MAP API-->
-    <script src="https://www.google.com/maps/embed/v1/MODE?key=AIzaSyB3wNe2ECgQED8uxdRRYDG7Hd8mpSdkDAE&parameters"></script>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <!-- JAVASCRIPT LINK: -->
-    <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
     <video autoplay muted loop id="background">
         <source src="assets/css/images/background.webm" type="video/webm">
     </video>
-       
+
     <nav>
         <div class="nav-wrapper">
             <div class="brand-logo center">Meteor Life, Bro</div>
         </div>
     </nav>
 
-    <!-- <div class="container">
-        <div id="funFacts"></div>
-    </div> -->
-
     <div class="container">
-        <div id="map"></div>
-    </div>
+        <div class="row">
 
-    <div class="container">
-        <div id="form">
-            <form>
-                <p>
-                    <label>
-                        <input class="with-gap" name="found" type="radio" />
-                        <span>Found?</span>
-                    </label>
-                </p>
-            </form>
-        </div>
-    </div>
+            <!-- <div class="container">
+            <div id="funFacts"></div>
+        </div> -->
 
-    <div class="container">
-        <div id="info"></div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h5 class="white-text center">Created By: Jacob Artz, Jamie DeHaan, Stephen Michaen, Tyler Winstead</h5>
+            <div class="container">
+                <div class="row">
+                    <div id="map">
+                        <div class="col s12 m6">
+                            <div class="card grey darken-1">
+                                <div class="card-content white-text">
+                                    <span class="card-title">Meteorite Details</span>
+                                    <p>Details go here</p>
+                                    <div id="results"></div>
+                                    <div id="year"></div>
+                                    <div id="mass"></div>
+                                    <div id="composition"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div id="form">
+                    <form>
+                        <div class="row">
+                            <div class="col s12">
+                                Number Of Results:
+                                <div class="input-field inline">
+                                    <input id="numResults" type="number" class="validate">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                Year Of Impact:
+                                <div class="input-field inline">
+                                    <input id="impactYear" type="number" class="validate">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                Minimum Mass:
+                                <div class="input-field inline">
+                                    <input id="minMass" type="number" class="validate">
+                                    <label for="minMass">Grams</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div id="info">
+                        <div class="col s12 m6">
+                            <div class="card grey darken-1">
+                                <div class="card-content white-text">
+                                    <span class="card-title">Details</span>
+                                    <p>Details go here</p>
+                                    <div id="results"></div>
+                                    <div id="year"></div>
+                                    <div id="mass"></div>
+                                    <div id="composition"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <h5 class="white-text center">Created By: Jacob Artz, Jamie DeHaan, Stephen Michaen, Tyler Winstead</h5>
+            </footer>
+
         </div>
-    </footer>
+    </div>
+
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA85odTb80OQO4oE89vlbHUkRKsMLUGRkY&callback=initMap"></script>
 
 </body>
 
