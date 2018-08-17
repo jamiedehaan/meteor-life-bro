@@ -7,6 +7,16 @@
     z-index: -100;
 }
 
+.btn {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.btn:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
 .footer {
     text-align: center;
     z-index: 2;
