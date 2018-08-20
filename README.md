@@ -25,5 +25,37 @@ _ How do we display the results? _
 - We need to show the map, start location, and destination
 - do we use a special icon on the map display to mark strikes?/How do we?
 
-//--> Pseudocode <--//
+/////////////////////////////////////////////////////////////////////////////////////////////
 
+var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+var mapOptions = {
+  zoom: 4,
+  center: myLatlng
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+var marker = new google.maps.Marker({
+    position: myLatlng,
+    title:"Hello World!"
+});
+
+// To add the marker to the map, call setMap();
+marker.setMap(map)
+
+
+function initMap() {
+  var myLatLng = {lat: -25.363, lng: 131.044};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}
+
+https://data.nasa.gov/resource/y77d-th95.json?fall=Fell&$where=mass>100&$limit=1000&year='2014-10-13T00:00:00.000'

@@ -75,19 +75,19 @@ nav {
 
 .pop {
     background-color: turquoise;
-    filter: alpha(opacity=50);
-    float: center;
-    left: -250px;
+    /* filter: alpha(opacity=50); */
+    /* float: center;
+    left: -250px; */
     opacity: 0.5;
     position: absolute;
     top: 125px;
-    visibility: hidden;
+   
 }
 
-.pop:hover {
+/* .pop:hover {
     filter: alpha(opacity=100);
     opacity: 1.0;
-}
+} */
 
 span {
     color: black;
