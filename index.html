@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <!-- Materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Kosugi" rel="stylesheet">
+    <!-- ANIMATE CSS-->
+    <link href="assets/css/animate.css/animate.css" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
@@ -22,36 +26,34 @@
     </video>
 
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper animated shake">
             <div class="brand-logo center">Meteor Life, Bro</div>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container animated shake">
         <div class="row">
-
-            <!-- <div class="container">
-            <div id="funFacts"></div>
-        </div> -->
 
             <div class="container">
                 <div class="row">
-                    <div id="map">
-                        <div class="col s12 m6">
-                            <div class="card grey darken-1">
-                                <div class="card-content white-text">
-                                    <span class="card-title">Meteorite Details</span>
-                                    <p>Details go here</p>
-                                    <div id="results"></div>
-                                    <div id="year"></div>
-                                    <div id="mass"></div>
-                                    <div id="composition"></div>
+                    <div class="col m12">
+                        <div id="map">
+                            <div id="pop">
+                                <div class="pop card darken-1">
+                                    <div class="card-content white-text">
+                                        <span class="card-title"></span>
+                                        <div id="results">Number Of Results: </div>
+                                        <div id="mass">Minimum Mass: </div>
+                                        <div id="status">Meteorite Status: </div>
+                                        <div id="composition">Meteorite Composition: </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="row">
                 <div id="form">
@@ -61,19 +63,11 @@
                                 Number Of Results:
                                 <div class="input-field inline">
                                     <input id="numResults" type="number" class="validate">
+                                    <label for="numResults">1-2000</label>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col s12">
-                                Year Of Impact:
-                                <div class="input-field inline">
-                                    <input id="impactYear" type="number" class="validate">
-                                </div>
-                            </div>
-                        </div>
-
+                         
                         <div class="row">
                             <div class="col s12">
                                 Minimum Mass:
@@ -84,7 +78,17 @@
                             </div>
                         </div>
 
-                        <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <div class="row">
+                                <div class="col s12">
+                                    Meteorite Status:
+                                    <div class="input-field inline">
+                                        <input id="status" type="text" class="validate">
+                                        <label for="status">"Fell" or "Found"</label>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Strike
                             <i class="material-icons right"></i>
                         </button>
 
@@ -93,15 +97,14 @@
 
                 <div class="row">
                     <div id="info">
-                        <div class="col s12 m6">
+                        <div class="col s12 m12">
                             <div class="card grey darken-1">
                                 <div class="card-content white-text">
-                                    <span id="otherinfo" class="card-title">Details</span>
-                                    <!-- <p>Details go here</p>
-                                    <div id="results"></div>
-                                    <div id="year"></div>
-                                    <div id="mass"></div>
-                                    <div id="composition"></div> -->
+                                    <span class="card-title">Summary</span>
+                                    <div id="results">Number Of Results: </div>
+                                    <div id="mass">Minimum Mass: </div>
+                                    <div id="status"> Meteorite Status: </div>
+                                    <div id="composition">Meteorite Composition: </div>
                                 </div>
                             </div>
                         </div>
