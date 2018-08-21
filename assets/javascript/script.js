@@ -1,9 +1,5 @@
 
-
-
 var map;
-
-
 // this function initially renders the map
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -13,24 +9,34 @@ function initMap() {
     },
     zoom: 3
   });
-
+};
+var favMarker;
+if (localStorage.getItem("favMarker")) {
+  favMarker = JSON.parse(localStorage.getItem("favMarker"))
+} else {
+  favMarker = null;
 }
-
-
-// $(document).ready(function(){
-//   $('select').formSelect();
-// });
-
+function addMarkerToLocalStorage({ name, mass, fall, type }) {
+  favMarker = {name, mass, fall, type};
+  // console.log(name, mass, fall)
+  localStorage.setItem("favMarker", JSON.stringify(favMarker));
+  // console.log(localStorage.getItem("favMarker"))
+};
+// function generateMarker(lat, lng) {
+//   var marker = new google.maps.Marker({
+//     position: { lat: lat, lng: lng }
+//   });
+//   marker.setMap(map);
+//   favMarkerAll.push(marker);
+//   return marker;
+// };
 // this function is responsible for doing the AJAX call to NASA
-// and putting the markers on the map
+// and putting the favMarker on the map
 function addMarkers() {
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    console.log("response", response);
-
-    console.log("URL" + queryURL);
     // the callback in the forEach runs once for each
     // meteorite that comes back from the AJAX response
     response.forEach(function (meteorite) {
@@ -46,55 +52,51 @@ function addMarkers() {
         lat: Number(meteorite.reclat),
         lng: Number(meteorite.reclong)
       }
-
       // then create a new marker and add it to the map
       var marker = new google.maps.Marker({
         position: coordinates,
         map: map,
         title: meteorite.name,
         icon: icon
-
       });
       infowindow = new google.maps.InfoWindow({
         content: ""
       });
       google.maps.event.addListener(marker, "mouseover", function () {
-        $("#pop-info").html("<p>" + meteorite.name + "</p><p>" + meteorite.mass + "</p><p>" + meteorite.fall + "</p>");
-        // var x = document.getElementById("pop-info");
-        // if (x.style.display === "none") {
-        //   x.style.display = "block";
-        // } else {
-        //   x.style.display = "none";
-        // }
+        $("#pop-info").html("<p>Name: " + meteorite.name + "</p><p>Mass: " + meteorite.mass + "</p><p>Status: " + meteorite.fall + "</p><p>Type: " + meteorite.recclass);
       });
       google.maps.event.addListener(marker, "mouseout", function () {
         $("#pop-info").text("")
-        // var x = document.getElementById("pop-info");
-        // if (x.style.display === "block") {
-        //   x.style.display = "none";
-        // } else {
-        //   x.style.display = "none";
-        // }
       });
       google.maps.event.addListener(marker, "click", function () {
         infowindow.setContent(meteorite.name);
         infowindow.open(map, this);
+        addMarkerToLocalStorage(
+          {
+            name: meteorite.name,
+            mass: meteorite.mass,
+            fall: meteorite.fall,
+            type: meteorite.recclass
+          }
+        )
+        $("#info-box").html("<p>Name: " + meteorite.name + "</p><p>Mass: " + meteorite.mass + "</p><p>Status: " + meteorite.fall + "</p><p>Type: " + meteorite.recclass);
       });
-      google.maps.event.addListener(marker, "click", function () {
-        $("#info-box").html("<p>Name: " + meteorite.name + "</p><p>Mass: " + meteorite.mass + "</p><p>Status: " + meteorite.fall + "</p><p>Type: " +meteorite.recclass);
-      });
-    })
+      
+     
+    });
   })
-    .catch(err => console.log(err));
 }
+//   .catch (err => console.log(err));
+// }
 var mass;
 var limit;
 var status;
+var type;
 var queryURL;
 
 $("#strike").on("click", function (event) {
   event.preventDefault();
-
+  
   mass = $("#minMass").val().trim();
   limit = $("#numResults").val().trim();
   status = $("#status").val().trim();
