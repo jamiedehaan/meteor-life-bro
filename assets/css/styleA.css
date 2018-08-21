@@ -1,19 +1,8 @@
-.black {
-    position: fixed;
-    background-color: black;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    right: 0;
-    top: 0;  
-    z-index: -200;
-}
-
 #background {
-    position: fixed;
     bottom: 0;
     min-height: 100%;
     min-width: 100%; 
+    position: fixed;
     right: 0; 
     z-index: -100;
 }
@@ -49,7 +38,10 @@ body {
     z-index: 2;
 }
     
-#info, #pop {
+#info {
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
     float: right;
     height: 200px;
     margin-right: 40px;
@@ -58,14 +50,7 @@ body {
     z-index: 2;  
 }
 
-#pop {
-    position: absolute;
-    bottom: 200px;
-    left: 750px;  
-}
-
 #map {
-    position: relative;
     border-color: white;
     border-style: solid;
     border-width: 5px;
@@ -73,6 +58,7 @@ body {
     margin: 0 auto;
     margin-bottom: 15px;
     margin-top: 15px;
+    position: relative;
     width: 600px;   
     z-index: 2;
 }
@@ -80,8 +66,7 @@ body {
 nav {
     background: black;
 }
-
-.nav-wrapper {
+.nav-wrapper{
     background-color: black;
     color: white;
     font-family: 'Bungee Shade', cursive;
@@ -90,7 +75,14 @@ nav {
 
 .pop {
     background-color: turquoise;
+    filter: alpha(opacity=50);
+    float: center;
+    left: -50px;
     opacity: 0.5;
+    position: absolute;
+    top: 125px;
+    /* visibility: hidden; */
+    z-index: 2;
 }
 
 .pop:hover {
@@ -107,56 +99,10 @@ span {
     color: white;
 }
 
-@media screen and (max-width: 980px) {
-    #pop {
-        left: 500px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #footer {
-        width: 110%;
-    }
-
-    #form {
-        position: relative;
-        left: 40px;
-    }
-
-    nav {
-        width: 110%;
-    }
-    #pop {
-        left: 370px;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .brand-logo.center {
-        width: 400px;
-    }
-
-    #footer {
-        position: absolute;
-        bottom: -450px;
-    }
-
-    #form {
-        position: relative;
-        left: 90px;
-    }
-
-    #map {
-        width: 100%;
-    }
-
-    nav {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    #pop {
-        left: 110px;
-        bottom: -225px;
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .row {
+    margin: 0 auto
+    width: 100%;
     }
 }
