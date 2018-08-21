@@ -22,14 +22,7 @@ function addMarkerToLocalStorage({ name, mass, fall, type }) {
   localStorage.setItem("favMarker", JSON.stringify(favMarker));
   // console.log(localStorage.getItem("favMarker"))
 };
-// function generateMarker(lat, lng) {
-//   var marker = new google.maps.Marker({
-//     position: { lat: lat, lng: lng }
-//   });
-//   marker.setMap(map);
-//   favMarkerAll.push(marker);
-//   return marker;
-// };
+
 // this function is responsible for doing the AJAX call to NASA
 // and putting the favMarker on the map
 function addMarkers() {
