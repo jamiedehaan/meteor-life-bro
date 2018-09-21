@@ -1,4 +1,4 @@
-# project-one
+# meteor-life-bro
 
 Group project of Tyler, Jacob, Stephen, and Jamie
 
