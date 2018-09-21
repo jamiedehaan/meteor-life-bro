@@ -21,4 +21,4 @@ locally store that meteorites' data.
 -----------(O)                                   -----------o))
 ----------(o)   -----o
 
-https://jaco5.github.io/project-one/
+https://jamiedehaan.github.io/meteor-life-bro/
