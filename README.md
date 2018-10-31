@@ -1,4 +1,4 @@
-# project-one
+# meteor-life-bro
 
 Group project of Tyler, Jacob, Stephen, and Jamie
 
@@ -21,4 +21,4 @@ locally store that meteorites' data.
 -----------(O)                                   -----------o))
 ----------(o)   -----o
 
-https://jaco5.github.io/project-one/
+https://jamiedehaan.github.io/meteor-life-bro/
